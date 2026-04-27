@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -61,8 +61,6 @@ export function Header() {
               className={`text-sm font-medium transition-smooth hover:text-gold ${
                 scrolled ? "text-foreground" : "text-white/90"
               }`}
-              activeProps={{ className: "text-gold" }}
-              activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
             </Link>
@@ -98,8 +96,6 @@ export function Header() {
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className="text-foreground text-base font-medium hover:text-gold"
-                activeProps={{ className: "text-gold" }}
-                activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
               </Link>
