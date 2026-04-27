@@ -8,6 +8,16 @@ import heroImg from "@/assets/hero-hall.jpg";
 
 export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
+  
+  const eventTypes = [
+    "Wedding",
+    "Corporate Event", 
+    "Birthday Party",
+    "Concert",
+    "Graduation",
+    "Anniversary",
+    "Other"
+  ];
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -83,7 +93,7 @@ export default function ContactPage() {
                   required
                 >
                   <option value="" disabled>Select event type…</option>
-                  {eventTypes.map((t) => <option key={t}>{t}</option>)}
+                  {eventTypes.map((t: string) => <option key={t}>{t}</option>)}
                 </select>
               </div>
               <div className="sm:col-span-2">
