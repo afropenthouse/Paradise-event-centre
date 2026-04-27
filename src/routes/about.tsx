@@ -1,24 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import heroImg from "@/assets/hero-hall.jpg";
 import drapesImg from "@/assets/event-drapes.jpg";
 import banquetImg from "@/assets/event-banquet.jpg";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About — Paradise Event Centre" },
-      { name: "description", content: "Discover Paradise Event Centre — Lagos&apos; premier venue for weddings, conferences and celebrations, located in Yaba." },
-      { property: "og:title", content: "About — Paradise Event Centre" },
-      { property: "og:description", content: "Lagos&apos; premier venue for weddings, conferences and celebrations, located in Yaba." },
-      { property: "og:image", content: heroImg },
-    ],
-  }),
-  component: AboutPage,
-});
-
-const facilities = [
+export default function AboutPage() {
+  const facilities = [
   { title: "Spacious Event Hall", desc: "Accommodates 1,000 guests in banquet style or 2,000 in theatre style. Partitionable into two equal halls of 500 seats each." },
   { title: "Immersive Visuals", desc: "Large display screens for projections on both sides of the hall, perfect for weddings, conferences and concerts." },
   { title: "Lighting & Sound", desc: "Truss lighting, fog machines, dual stages, and concert-grade sound systems delivering a premium experience." },
@@ -27,7 +14,6 @@ const facilities = [
   { title: "Additional Amenities", desc: "Changing rooms, kitchenette for vendors, and an extremely large parking area for over 180 cars." },
 ];
 
-function AboutPage() {
   return (
     <>
       <PageHero

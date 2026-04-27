@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero } from "@/components/site/PageHero";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
@@ -7,22 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import drapesImg from "@/assets/event-drapes.jpg";
 import heroImg from "@/assets/hero-hall.jpg";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact — Paradise Event Centre" },
-      { name: "description", content: "Book a tour or enquire about hosting your event at Paradise Event Centre, Yaba, Lagos." },
-      { property: "og:title", content: "Contact — Paradise Event Centre" },
-      { property: "og:description", content: "Get in touch to plan your perfect event in Lagos." },
-      { property: "og:image", content: drapesImg },
-    ],
-  }),
-  component: ContactPage,
-});
-
-const eventTypes = ["Wedding", "Corporate Event", "Birthday", "Concert", "Graduation", "Anniversary", "Other"];
-
-function ContactPage() {
+export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

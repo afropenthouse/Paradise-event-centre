@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import {
   Users,
   Sparkles,
@@ -18,58 +18,35 @@ import drapesImg from "@/assets/event-drapes.jpg";
 import banquetImg from "@/assets/event-banquet.jpg";
 import { SectionHeading } from "@/components/site/SectionHeading";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Paradise Event Centre — Lagos Premier Event Venue" },
-      {
-        name: "description",
-        content:
-          "Lagos&apos; premier event venue in Yaba. Host weddings, conferences, concerts and celebrations for up to 2,000 guests in elegant style.",
-      },
-      { property: "og:title", content: "Paradise Event Centre — Lagos Premier Event Venue" },
-      {
-        property: "og:description",
-        content:
-          "Elegant event hall in Yaba, Lagos for up to 2,000 guests. Weddings, conferences, concerts and more.",
-      },
-      { property: "og:image", content: heroImg },
-      { name: "twitter:image", content: heroImg },
-    ],
-  }),
-  component: HomePage,
-});
+export default function HomePage() {
+  const stats = [
+    { value: "2,000", label: "Guest Capacity" },
+    { value: "500+", label: "Events Hosted" },
+    { value: "24/7", label: "Security & Power" },
+    { value: "180", label: "Parking Spaces" },
+  ];
 
-const stats = [
-  { value: "2,000", label: "Guest Capacity" },
-  { value: "500+", label: "Events Hosted" },
-  { value: "24/7", label: "Security & Power" },
-  { value: "180", label: "Parking Spaces" },
-];
+  const services = [
+    { icon: Sparkles, title: "Weddings", img: weddingImg, desc: "From intimate ceremonies to grand receptions, every detail crafted with elegance." },
+    { icon: Users, title: "Corporate Events", img: corporateImg, desc: "Conferences, seminars and product launches with state-of-the-art AV." },
+    { icon: Star, title: "Birthdays", img: birthdayImg, desc: "Customisable themes and decor to make every milestone unforgettable." },
+    { icon: Music2, title: "Concerts & Shows", img: concertImg, desc: "Professional stage, truss lighting and powerful sound for live entertainment." },
+  ];
 
-const services = [
-  { icon: Sparkles, title: "Weddings", img: weddingImg, desc: "From intimate ceremonies to grand receptions, every detail crafted with elegance." },
-  { icon: Users, title: "Corporate Events", img: corporateImg, desc: "Conferences, seminars and product launches with state-of-the-art AV." },
-  { icon: Star, title: "Birthdays", img: birthdayImg, desc: "Customisable themes and decor to make every milestone unforgettable." },
-  { icon: Music2, title: "Concerts & Shows", img: concertImg, desc: "Professional stage, truss lighting and powerful sound for live entertainment." },
-];
+  const features = [
+    { icon: Users, title: "Vast Capacity", desc: "Seats 1,000 in banquet style or 2,000 theatre style — partitioned for two events at once." },
+    { icon: Sparkles, title: "Elegant Interiors", desc: "Crystal chandeliers, draped ceilings and refined finishes throughout the hall." },
+    { icon: ShieldCheck, title: "24/7 Security", desc: "CCTV surveillance, on-site guards and police presence for complete peace of mind." },
+    { icon: MapPin, title: "Prime Location", desc: "Strategically placed in Yaba — easy access for both Mainland and Island guests." },
+    { icon: Music2, title: "Pro AV & Lighting", desc: "Truss, fog machines, dual stages, large display screens and concert-grade sound." },
+    { icon: Camera, title: "Full Amenities", desc: "Changing rooms, kitchenette, ample parking and dedicated event support staff." },
+  ];
 
-const features = [
-  { icon: Users, title: "Vast Capacity", desc: "Seats 1,000 in banquet style or 2,000 theatre style — partitioned for two events at once." },
-  { icon: Sparkles, title: "Elegant Interiors", desc: "Crystal chandeliers, draped ceilings and refined finishes throughout the hall." },
-  { icon: ShieldCheck, title: "24/7 Security", desc: "CCTV surveillance, on-site guards and police presence for complete peace of mind." },
-  { icon: MapPin, title: "Prime Location", desc: "Strategically placed in Yaba — easy access for both Mainland and Island guests." },
-  { icon: Music2, title: "Pro AV & Lighting", desc: "Truss, fog machines, dual stages, large display screens and concert-grade sound." },
-  { icon: Camera, title: "Full Amenities", desc: "Changing rooms, kitchenette, ample parking and dedicated event support staff." },
-];
-
-const testimonials = [
-  { quote: "Paradise Event Centre made our wedding absolutely perfect. The venue was breathtaking and the staff went above and beyond.", name: "Sarah & Michael", role: "Wedding Couple" },
-  { quote: "We hosted our annual conference here and it was outstanding. Top-notch facilities and professional service throughout.", name: "Dr. Adebayo", role: "Corporate Client" },
-  { quote: "My son&apos;s birthday was magical — the decor, the lighting, the team. Everything was just beautiful.", name: "Mrs. Shuaib", role: "Birthday Host" },
-];
-
-function HomePage() {
+  const testimonials = [
+    { quote: "Paradise Event Centre made our wedding absolutely perfect. The venue was breathtaking and the staff went above and beyond.", name: "Sarah & Michael", role: "Wedding Couple" },
+    { quote: "We hosted our annual conference here and it was outstanding. Top-notch facilities and professional service throughout.", name: "Dr. Adebayo", role: "Corporate Client" },
+    { quote: "My son&apos;s birthday was magical — the decor, the lighting, the team. Everything was just beautiful.", name: "Mrs. Shuaib", role: "Birthday Host" },
+  ];
   return (
     <>
       {/* HERO */}

@@ -1,22 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageHero } from "@/components/site/PageHero";
 import { Check } from "lucide-react";
 import banquetImg from "@/assets/event-banquet.jpg";
 
-export const Route = createFileRoute("/pricing")({
-  head: () => ({
-    meta: [
-      { title: "Pricing — Paradise Event Centre" },
-      { name: "description", content: "Transparent pricing for our 500 and 1,000 capacity event halls in Yaba, Lagos." },
-      { property: "og:title", content: "Pricing — Paradise Event Centre" },
-      { property: "og:description", content: "Transparent packages for every kind of event." },
-      { property: "og:image", content: banquetImg },
-    ],
-  }),
-  component: PricingPage,
-});
-
-const packages = [
+export default function PricingPage() {
+  const packages = [
   {
     name: "500 Capacity Hall",
     tagline: "Intimate gatherings & mid-sized events",
@@ -53,7 +41,6 @@ const packages = [
   },
 ];
 
-function PricingPage() {
   return (
     <>
       <PageHero

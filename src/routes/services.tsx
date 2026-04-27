@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { PageHero } from "@/components/site/PageHero";
 import weddingImg from "@/assets/event-wedding.jpg";
 import corporateImg from "@/assets/event-corporate.jpg";
@@ -7,20 +7,8 @@ import concertImg from "@/assets/event-concert.jpg";
 import graduationImg from "@/assets/event-graduation.jpg";
 import anniversaryImg from "@/assets/event-anniversary.jpg";
 
-export const Route = createFileRoute("/services")({
-  head: () => ({
-    meta: [
-      { title: "Services — Paradise Event Centre" },
-      { name: "description", content: "Weddings, corporate events, birthdays, concerts, graduations and anniversaries — all hosted with elegance at Paradise Event Centre, Lagos." },
-      { property: "og:title", content: "Services — Paradise Event Centre" },
-      { property: "og:description", content: "Comprehensive event solutions in Lagos — weddings, corporate, concerts and more." },
-      { property: "og:image", content: weddingImg },
-    ],
-  }),
-  component: ServicesPage,
-});
-
-const services = [
+export default function ServicesPage() {
+  const services = [
   { title: "Weddings", img: weddingImg, desc: "From intimate ceremonies to grand receptions, we create the perfect setting for your special day with elegant decorations and professional coordination." },
   { title: "Corporate Events", img: corporateImg, desc: "Conference rooms and meeting spaces equipped with modern technology for seminars, conferences, AGMs and corporate gatherings." },
   { title: "Birthday Parties", img: birthdayImg, desc: "Celebrate life&apos;s milestones in style with our customisable party packages and themed decorations for all ages." },
@@ -29,7 +17,6 @@ const services = [
   { title: "Anniversary Celebrations", img: anniversaryImg, desc: "Celebrate years of love and commitment with our romantic anniversary packages and intimate venue settings." },
 ];
 
-function ServicesPage() {
   return (
     <>
       <PageHero
